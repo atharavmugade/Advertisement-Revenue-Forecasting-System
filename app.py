@@ -106,9 +106,9 @@ if st.sidebar.button("🚀 Predict"):
         clicks,
         spent,
         total_conversion
-    ]]
+      ]]
 
-        myinput = pd.DataFrame(myinput, columns=columns)
+    myinput = pd.DataFrame(myinput, columns=columns)
 
     result = model.predict(myinput)
 
