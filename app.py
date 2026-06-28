@@ -15,7 +15,7 @@ model = pickle.load(open("model.pkl", "rb"))
 # ------------------ SIDEBAR ------------------
 st.sidebar.header("Enter Advertisement Details")
 
-ad_id = st.sidebar.number_input("Ad ID", min_value=100000, step=1)
+ad_id = st.sidebar.number_input("Ad ID", min_value=100000, step=10)
 
 xyz_campaign_id = st.sidebar.selectbox(
     "XYZ Campaign ID",
@@ -125,7 +125,7 @@ if st.sidebar.button("🚀 Predict"):
     if prediction < 0:
         st.error("❌ Invalid Inputs")
     else:
-        st.balloons()
+        # st.balloons()
 
         st.success("✅ Prediction Completed Successfully")
 
