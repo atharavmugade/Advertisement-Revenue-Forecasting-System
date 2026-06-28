@@ -108,32 +108,31 @@ if st.sidebar.button("🚀 Predict"):
         total_conversion
     ]]
 
-    myinput = pd.DataFrame(myinput, columns=columns)
+        myinput = pd.DataFrame(myinput, columns=columns)
 
-   result = model.predict(myinput)
+    result = model.predict(myinput)
 
-prediction = float(result[0])
+    prediction = float(result[0])
 
-# Convert prediction into percentage
-percentage = round(prediction * 10, 2)
+    # Convert prediction into percentage
+    percentage = round(prediction * 10, 2)
 
-if percentage > 100:
-    percentage = 100
+    if percentage > 100:
+        percentage = 100
 
-st.markdown("---")
+    st.markdown("---")
 
-if prediction < 0:
-    st.error("❌ Invalid Inputs")
-else:
-    st.balloons()
+    if prediction < 0:
+        st.error("❌ Invalid Inputs")
+    else:
+        st.balloons()
 
-    st.success("✅ Prediction Completed Successfully")
+        st.success("✅ Prediction Completed Successfully")
 
-    st.metric(
-        label="Advertisement Success Rate",
-        value=f"{percentage}%"
-    )
-
+        st.metric(
+            label="Advertisement Success Rate",
+            value=f"{percentage}%"
+        )
 # ------------------ DATASET INFO ------------------
 st.markdown("---")
 
